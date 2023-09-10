@@ -135,7 +135,7 @@ export function listBooks() {
             console.log('Статус ответа: ', xhr.status);
          } else {
             const result = JSON.parse(xhr.response);
-            // console.log(result);
+            console.log(result);
             displayResult(result);     
          }
       };
@@ -178,14 +178,14 @@ export function listBooks() {
                <div class="list-books__card--reviews">
                   <img src="${item.averageRating !== undefined ? item.averageRating : ''}">
                   <p class="list-books__card--reviews-text">
-                     ${item.volumeInfo.averageRating !== undefined ? item.volumeInfo.averageRating : ''}
+                     ${item.volumeInfo.ratingsCount !== undefined ? item.volumeInfo.ratingsCount + ' review' : ''}
                   </p>
                </div>
                <p class="list-books__card--description">
                   ${item.volumeInfo.description !== undefined ? item.volumeInfo.description : ''}
                </p>
                <h2 class="list-books__card--price">
-                  ${item.saleInfo.retailPrice !== undefined ? item.saleInfo.retailPrice : ''}
+                  ${(item.saleInfo.retailPrice?.amount ?? '') + ' ' + (item.saleInfo.retailPrice?.currencyCode ?? '')}
                </h2>
                <button class="list-books__card--button addToCartButton ${listCart.includes(item.id) && 'list-books__card--button-active'}" id="${item.id}">
                   ${listCart.includes(item.id) ? 'in the cart' : 'buy now'}
@@ -201,7 +201,6 @@ export function listBooks() {
 
       const addToCartButtons = document.querySelectorAll('.addToCartButton');
       const hasItemInCart = document.querySelector('.nav-bar__loby-span');
-      let cartItemCount = 0;
       
       addToCartButtons.forEach(function(button) {
          button.addEventListener('click', function(ev) {
@@ -236,7 +235,7 @@ export function listBooks() {
            }
          });
        
-         if (hasActiveButton) {
+         if (hasActiveButton && listCart.length > 0) {
            hasItemInCart.classList.add('nav-bar__loby-span-active');
            hasItemInCart.classList.remove('nav-bar__loby-span');
          } else {
@@ -246,13 +245,16 @@ export function listBooks() {
        
          hasItemInCart.textContent = cartItemCount;
       }
-      
-      window.addEventListener('unload', function() {
+
+      function saveCartQuantity() {
          if (listCart.length > 0) {
            increaseCartItemQuantity();
          }
-       });
+      }
+       
+      saveCartQuantity();
    };
 
    useRequest(indexPagination, thisSubject);
 }
+

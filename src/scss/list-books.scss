@@ -98,3 +98,19 @@
    line-height: normal;
    text-transform: uppercase;
 }
+
+.stars {
+   display: inline-block;
+   font-size: 20px;
+ }
+ 
+ .stars:before {
+   content: "\2605";
+   color: grey;
+ }
+ 
+ .average-rating {
+   font-size: 18px;
+   color: grey;
+   margin-top: 5px;
+ }
