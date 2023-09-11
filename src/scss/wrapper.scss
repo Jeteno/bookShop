@@ -22,6 +22,18 @@
    }
 }
 
+@media screen and (max-width: 924px) {
+   .wrapper {
+      width: 824px;
+   }
+}
+
+@media screen and (max-width: 900px) {
+   .wrapper {
+      width: 800px;
+   }
+}
+
 @media screen and (max-width: 768px) {
    .wrapper {
       width: 668px;
@@ -31,6 +43,16 @@
    }
 }
 
+@media screen and (max-width: 680px) {
+   .wrapper {
+      width: 580px;
+   }
+}
+@media screen and (max-width: 580px) {
+   .wrapper {
+      width: 480px;
+   }
+}
 @media screen and (max-width: 425px) {
    .wrapper {
       width: 325px;

@@ -20,7 +20,7 @@
    width: 924px;
    margin-left: auto;
    gap: 85px 0;
-   @media screen and (max-width: 768px) {
+   @media screen and (max-width: 900px) {
       width: 100%;
    }
 }
@@ -28,11 +28,16 @@
    display: flex;
    width: 424px;
    gap: 36px;
-   @media screen and (max-width: 768px) {
+   @media screen and (max-width: 900px) {
       width: 100%;
    }
    @media screen and (max-width: 425px) {
       flex-direction: column;
+   }
+}
+.list-books__card--image {
+   @media screen and (max-width: 425px) {
+      text-align: center;
    }
 }
 .list-books__card--img {
@@ -56,6 +61,7 @@
 .list-books__card--reviews {
    display: flex;
    gap: 6px;
+   align-items: center;
 }
 .list-books__card--description {
    @extend %card-subtitle;
@@ -128,4 +134,18 @@
    font-size: 18px;
    color: grey;
    margin-top: 5px;
+ }
+ .book-rating {
+   display: flex;
+   gap: 1px;
+ }
+ .star {
+   background-image: url('../img/list-book/Star.svg');
+   width: 12px;
+   height: 12px;
+ }
+ .empty-star{
+   background-image: url('../img/list-book/empty-star.svg');
+   width: 12px;
+   height: 12px;
  }

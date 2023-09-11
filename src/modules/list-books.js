@@ -76,7 +76,7 @@ export function listBooks() {
    
       result.forEach(item => {
          const cardBlock = `
-         <a href="#" class="category__link" id="category__link" name="Architecture">
+         <a href="#" class="category__link" id="category__link" name="${item.subject}">
             <span class="category__title">
                ${item.name}
             </span>
@@ -96,7 +96,7 @@ export function listBooks() {
       let result = apiData;
     
       result.forEach(item => {
-        const cardBlock = `<option id="category__link-mobile">${item.name}</option>`;
+        const cardBlock = `<option class="category__link-mobile" value="${item.subject}">${item.name}</option>`;
         cards += cardBlock;
       });
     
@@ -143,14 +143,9 @@ export function listBooks() {
       });
    });
 
-   categoryLinksMobile.forEach((option, index) => {
-      option.addEventListener('click', (event) => {
-        event.preventDefault();
-        currentIndex = index;
-        thisSubject = category[index].subject;
-    
-        useRequest(indexPagination, thisSubject);
-      });
+   categoryContentMobile.addEventListener('change', (event) => {
+      event.preventDefault(); 
+      useRequest(1, event.target.value);
     });
 
    function useRequest(indexPagination, thisSubject) {
@@ -190,6 +185,17 @@ export function listBooks() {
       let result = apiData.items;
 
       result.forEach(item => {
+         const averageRating = item.volumeInfo.averageRating;
+     
+         let stars = '';
+         for (let i = 0; i < averageRating; i++) {
+           stars += '<span class="star"></span>';
+         }
+     
+         for (let i = averageRating; i < 5; i++) {
+           stars += '<span class="empty-star"></span>';
+         }
+
          const cardBlock = `
          <div class="list-books__card">
             <div class="list-books__card--image">
@@ -203,7 +209,9 @@ export function listBooks() {
                   ${item.volumeInfo.title !== undefined ? item.volumeInfo.title : ''}
                </h2>
                <div class="list-books__card--reviews">
-                  <img src="${item.averageRating !== undefined ? item.averageRating : ''}">
+                  <div class="book-rating">
+                     ${stars}
+                  </div>
                   <p class="list-books__card--reviews-text">
                      ${item.volumeInfo.ratingsCount !== undefined ? item.volumeInfo.ratingsCount + ' review' : ''}
                   </p>
