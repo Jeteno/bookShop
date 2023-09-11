@@ -66,6 +66,7 @@ export function listBooks() {
       },
    ];
    const categoryContent = document.querySelector('.category__content');
+   const categoryContentMobile = document.querySelector('.dropdown-menu');
    
    let listCart = JSON.parse(localStorage.getItem('books')) ?? [];
 
@@ -90,7 +91,22 @@ export function listBooks() {
 
    categoryResult(category);
 
+   function categoryResultMobile(apiData) {
+      let cards = '';
+      let result = apiData;
+    
+      result.forEach(item => {
+        const cardBlock = `<option id="category__link-mobile">${item.name}</option>`;
+        cards += cardBlock;
+      });
+    
+      categoryContentMobile.innerHTML = cards;
+    }
+    
+   categoryResultMobile(category);
+
    const categoryLinks = document.querySelectorAll('#category__link');
+   const categoryLinksMobile = document.querySelectorAll('#category__link-mobile');
    let currentIndex = 0;
    let thisSubject = category[currentIndex].subject; 
 
@@ -104,6 +120,7 @@ export function listBooks() {
    };
 
    setFirstCategoryActive();
+
 
    function updateSliderClasses(index) {
       categoryLinks.forEach(item => {
@@ -125,6 +142,16 @@ export function listBooks() {
          updateSliderClasses(currentIndex);
       });
    });
+
+   categoryLinksMobile.forEach((option, index) => {
+      option.addEventListener('click', (event) => {
+        event.preventDefault();
+        currentIndex = index;
+        thisSubject = category[index].subject;
+    
+        useRequest(indexPagination, thisSubject);
+      });
+    });
 
    function useRequest(indexPagination, thisSubject) {
       let xhr = new XMLHttpRequest();
@@ -257,4 +284,3 @@ export function listBooks() {
 
    useRequest(indexPagination, thisSubject);
 }
-

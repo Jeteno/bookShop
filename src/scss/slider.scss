@@ -71,3 +71,10 @@
 .active {
    fill: #9E98DC;
 }
+
+@media screen and (max-width: 1024px) {
+   .slider__promo {
+      display: none;
+   }
+   
+}
