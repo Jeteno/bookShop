@@ -106,7 +106,7 @@ export function listBooks() {
    categoryResultMobile(category);
 
    const categoryLinks = document.querySelectorAll('#category__link');
-   const categoryLinksMobile = document.querySelectorAll('#category__link-mobile');
+   // const categoryLinksMobile = document.querySelectorAll('#category__link-mobile');
    let currentIndex = 0;
    let thisSubject = category[currentIndex].subject; 
 
@@ -120,7 +120,6 @@ export function listBooks() {
    };
 
    setFirstCategoryActive();
-
 
    function updateSliderClasses(index) {
       categoryLinks.forEach(item => {
