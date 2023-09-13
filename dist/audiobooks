@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Bookshop</title>
+   <title>AudioBooks</title>
    <link rel="stylesheet" type="text/css" href="dist/main.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,84 +73,17 @@
          </div>
       </header>
       <main class="main">
-         <section class="slider__container container">
-            <div class="slider__body">
-               <div class="slider__content">
-                  <a href="#" class="slider__images">
-                     <img src="" alt="slid" class="slider__img" id="images">
-                  </a>
-                  <div class="slider__content-arrow">
-                     <nav class="slider__content-pagination">
-                        <li class="content__pagination">
-                           <a href="#" class="content__pagination-link">
-                              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <circle class="slider__dot active" cx="6" cy="6" r="6" fill="#EFEEF6"/>
-                              </svg>
-                           </a>
-                        </li>
-                        <li class="content__pagination">
-                           <a href="#" class="content__pagination-link">
-                              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <circle class="slider__dot" cx="6" cy="6" r="6" fill="#EFEEF6"/>
-                              </svg>
-                           </a>
-                        </li>
-                        <li class="content__pagination">
-                           <a href="#" class="content__pagination-link">
-                              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                 <circle class="slider__dot" cx="6" cy="6" r="6" fill="#EFEEF6"/>
-                              </svg>
-                           </a>
-                        </li>
-                     </nav>
-                  </div>
-                  <div class="slider__promo">
-                     <a href="#" class="promo__body-purple">
-                        <h2 class="promo__title">
-                           Change <br> old book <br> on new
-                        </h2>
-                        <div class="promo__arrow">
-                           <svg width="57" height="14" viewBox="0 0 57 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M0 7H54" stroke="#1C2A39" stroke-width="2"/>
-                              <path d="M48 1L55 7L48 13" stroke="#1C2A39" stroke-width="2"/>
-                           </svg>
-                        </div>
-                     </a>
-                     <a href="#" class="promo__body-pink">
-                        <h2 class="promo__title title-pink">
-                           top <br> 100 <br> books <br> 2022
-                        </h2>
-                        <div class="promo__arrow">
-                           <svg width="57" height="14" viewBox="0 0 57 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M0 7H54" stroke="#1C2A39" stroke-width="2"/>
-                              <path d="M48 1L55 7L48 13" stroke="#1C2A39" stroke-width="2"/>
-                           </svg>
-                        </div>
-                     </a>
-                  </div>
-               </div>
+         <section class="message__conteiner">
+            <div class="massage__image">
+               <img src="./img/list-book/free-icon-audiobook.png" alt="Аудиокниги" class="massage__img">
             </div>
-         </section>
-         <section class="category__container container">
-            <div class="category__body">
-               <div class="category__content">
-               </div>
-            </div>
-            <div class="dropdown">
-               <span class="dropdown-label">Категория: </span>
-               <select class="dropdown-menu">
-               </select>
-             </div>
-         </section>
-         <section class="list-books__conteiner container">
-            <div class="list-books__body">
-               <div class="list-books__cards">
-               </div>
-               <div class="list-books__button">
-                  <button class="list-books__card--button">
-                     Load more
-                  </button>
-               </div>
+            <div class="massage__content">
+               <h1 class="massage__content-title">
+                  Добро пожаловать на страницу аудиокниг!
+               </h1>
+               <p class="massage__content-subtitle">
+                  Здесь пока нет никакой информации, но скоро она появится.
+               </p>
             </div>
          </section>
       </main>

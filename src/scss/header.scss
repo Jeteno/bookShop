@@ -50,7 +50,11 @@
    list-style: none;
    position: relative;
 }
-   
+
+.nav-bar__loby-span {
+   display: none;
+}
+
 .nav-bar__loby-span-active {
    width: 13px;
    height: 13px;
@@ -68,10 +72,6 @@
    line-height: normal;
    text-transform: capitalize;
    text-align: center;
-}
-   
-.nav-bar__loby-span {
-   display: none;
 }
 
 .active-link {

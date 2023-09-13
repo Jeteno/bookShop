@@ -12,11 +12,23 @@ module.exports = {
       path: path.resolve(__dirname, 'dist'),
       filename: 'main.js'
    },
-   mode: 'production',
+   mode: 'development',
    plugins: [
       new MiniCssExtractPlugin(),
       new HtmlWebpackPlugin({
          template: 'index.html'
+      }),
+      new HtmlWebpackPlugin({
+         filename: 'audiobooks.html',
+         template: 'audiobooks.html'
+      }),
+      new HtmlWebpackPlugin({
+         filename: 'stationery.html',
+         template: 'stationery.html'
+      }),
+      new HtmlWebpackPlugin({
+         filename: 'blog.html',
+         template: 'blog.html'
       }),
       new CopyWebpackPlugin({
          patterns: [

@@ -261,20 +261,10 @@ export function listBooks() {
       
       function increaseCartItemQuantity() {
          let cartItemCount = listCart.length;
-         let hasActiveButton = false;
        
-         addToCartButtons.forEach(function(button) {
-           if (button.classList.contains('list-books__card--button-active')) {
-             cartItemCount;
-             hasActiveButton = true;
-           }
-         });
-       
-         if (hasActiveButton && listCart.length > 0) {
+         if (listCart.length > 0) {
            hasItemInCart.classList.add('nav-bar__loby-span-active');
-           hasItemInCart.classList.remove('nav-bar__loby-span');
          } else {
-           hasItemInCart.classList.add('nav-bar__loby-span');
            hasItemInCart.classList.remove('nav-bar__loby-span-active');
          }
        
